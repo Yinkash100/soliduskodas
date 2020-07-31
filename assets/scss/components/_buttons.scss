@@ -1,0 +1,92 @@
+.btn {
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 0.25rem 0.75rem;
+  display: inline-block;
+  border: none;
+  position: relative;
+  font-size: $default-font-size;
+  font-weight: bolder;
+  background-color: inherit;
+  color: $color-white;
+  cursor: pointer;
+
+  @include respond(tab-land){
+    padding: 0.5rem 1rem;
+  }
+
+
+  &:link, &:visited{
+
+  }
+
+
+
+  &:hover{
+    transform: translateY(-0.1rem);
+    box-shadow: 0 .5rem 1rem rgba($color-grey-dark, .20);
+  }
+
+  &:active{
+    transform: translateY(-.1rem);
+    border: $color-white;
+  }
+}
+
+.btn--icon{
+  background: $color-primary;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 10rem;
+  padding: 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.btn--primary{
+  background: $color-primary;
+  color: $color-white;
+  border-radius: 4px;
+}
+
+.btn::after{
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn:hover::after{
+  transform: scaleX(1.2) scaleY(1.4);
+  opacity: 0;
+}
+
+
+.btn-text{
+
+  background: none;
+  border: none;
+  color: $color-black;
+
+  &:link,
+
+  &:visited{
+  }
+
+  &:hover{
+    color: $color-primary;
+    box-shadow: 0 1rem 2rem rgba($color-black, .1s);
+    transform: translateY(-2px);
+  }
+
+  &:active{
+    border: 1px solid $color-primary;
+    transform: translateY(-2px);
+  }
+
+}
+
+.btn--outline {
+  border: 1px solid $color-black-deep;
+  border-radius: 0;
+  color: $color-black-deep;
+}
+
